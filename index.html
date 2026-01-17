@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Revelation Decision Desk</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Revelation Decision Desk</h1>
+      <p class="sub">
+        Answer the questions. See which cohesive framework your answers imply — and why.
+      </p>
+      <div class="meta">
+        <span id="progressText">0 / 0</span>
+        <div class="progressBar"><div id="progressFill"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="intro" class="card">
+      <h2>How it works</h2>
+      <ul>
+        <li>You’ll answer ~25 “load-bearing” questions that determine the main frameworks.</li>
+        <li>The app scores multiple viewpoints at once (not just one axis).</li>
+        <li>You’ll get a ranked match, a readable summary, and “why” your answers fit.</li>
+      </ul>
+      <div class="actions">
+        <button id="startBtn" class="primary">Start</button>
+      </div>
+    </section>
+
+    <section id="quiz" class="card hidden">
+      <div class="qHeader">
+        <div class="qTag" id="qTag"></div>
+        <h2 id="qTitle"></h2>
+        <p id="qPrompt" class="qPrompt"></p>
+      </div>
+
+      <div id="choices" class="choices"></div>
+
+      <div class="nav">
+        <button id="backBtn" class="secondary">Back</button>
+        <button id="nextBtn" class="primary" disabled>Next</button>
+      </div>
+    </section>
+
+    <section id="results" class="card hidden">
+      <h2>Your Results</h2>
+
+      <div id="resultTop" class="resultTop"></div>
+
+      <div class="grid2">
+        <div>
+          <h3>Ranked matches</h3>
+          <div id="rankedList" class="ranked"></div>
+        </div>
+        <div>
+          <h3>Why you landed here</h3>
+          <div id="whyList" class="why"></div>
+        </div>
+      </div>
+
+      <h3>Full description of your top view(s)</h3>
+      <div id="viewDescriptions" class="descriptions"></div>
+
+      <div class="actions">
+        <button id="restartBtn" class="secondary">Restart</button>
+        <button id="copyBtn" class="primary">Copy Results</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Built as a decision engine, not a polemic. You can open PRs to refine questions, weights, or summaries.
+      </p>
+    </div>
+  </footer>
+
+  <script src="./data/questions.js"></script>
+  <script src="./data/views.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
